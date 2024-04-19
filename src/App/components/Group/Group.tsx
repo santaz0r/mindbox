@@ -6,7 +6,11 @@ type TProps = {
 };
 
 const Group = ({ children, className }: TProps) => {
-  return <div className={className}>{children}</div>;
+  return (
+    <div data-testid="input-group" className={className}>
+      {children}
+    </div>
+  );
 };
 
 export default Group;

@@ -14,18 +14,20 @@ function App() {
   const [todos, setTodos] = useState(data);
   const [text, setText] = useState('');
   const [radio, setRadio] = useState<'all' | 'active' | 'completed'>('all');
-  const changeText = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setText(e.target.value);
-  };
+
+  const changeText = (e: React.ChangeEvent<HTMLInputElement>) => setText(e.target.value);
+
   const activeTodos = todos.filter((t) => !t.completed);
   const completedTodos = todos.filter((t) => t.completed);
+
   const addTodo = () => {
     const newTodo = {
       id: Date.now().toString(),
       title: text,
       completed: false,
     };
-    setTodos([...todos, newTodo]);
+
+    setTodos((prev) => [...prev, newTodo]);
     setText('');
   };
 
@@ -62,7 +64,7 @@ function App() {
         <Button buttonText="Add new todo" isDisabled={!text} onClick={addTodo} />
       </Group>
 
-      <TodosList todos={filteredTodos} onChangeStatus={handleChangeStatus} />
+      <TodosList data-testid="todos-list" todos={filteredTodos} onChangeStatus={handleChangeStatus} />
 
       <div className={styled.controls}>
         <div className={styled.controls__counter}>

@@ -5,7 +5,11 @@ type TProps = {
 };
 
 const RadioGroup = ({ children }: TProps) => {
-  return <div style={{ display: 'flex' }}>{children}</div>;
+  return (
+    <div data-testid="radio-group" style={{ display: 'flex' }}>
+      {children}
+    </div>
+  );
 };
 
 export default RadioGroup;

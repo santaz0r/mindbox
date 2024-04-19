@@ -13,6 +13,7 @@ const TextField = ({ text, onChange }: TProps) => {
       onChange={onChange}
       placeholder="What needs to be done"
       maxLength={50}
+      data-testid="text-input"
     />
   );
 };

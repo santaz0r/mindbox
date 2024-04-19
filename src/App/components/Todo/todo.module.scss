@@ -7,13 +7,20 @@
   &:last-child {
     margin-bottom: 0;
   }
-  &__status {
+
+  &__text {
+    color: #fff;
+    font-size: 24px;
+  }
+  input {
+    appearance: none;
+    background-color: #fff;
     border-radius: 50%;
     margin-right: 10px;
     width: 30px;
     height: 30px;
     position: relative;
-    &_done {
+    &:checked {
       &::after {
         content: '\2713';
         color: green;
@@ -26,15 +33,11 @@
       }
     }
   }
-  &:has(.todo__status_done) {
+  &:has(input:checked) {
     .todo__text {
       text-decoration: line-through;
 
       opacity: 0.5;
     }
-  }
-  &__text {
-    color: #fff;
-    font-size: 24px;
   }
 }

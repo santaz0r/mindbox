@@ -6,12 +6,14 @@ type TProps = {
 };
 
 const Todo = ({ todo, onChangeStatus }: TProps) => {
-  const setClass = () => {
-    return todo.completed ? `${styled.todo__status_done} ${styled.todo__status}` : styled.todo__status;
-  };
   return (
-    <div className={(styled.todos__item, styled.todo)}>
-      <button className={setClass()} onClick={() => onChangeStatus(todo.id)}></button>
+    <div className={styled.todo} data-testid="todo-item">
+      <input
+        defaultChecked={todo.completed}
+        type="checkbox"
+        data-testid="check-btn"
+        onClick={() => onChangeStatus(todo.id)}
+      />
       <p className={styled.todo__text}>{todo.title}</p>
     </div>
   );
