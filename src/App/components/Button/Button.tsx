@@ -3,11 +3,15 @@ type TProps = {
   onClick: () => void;
   isDisabled?: boolean;
   buttonText: string;
+  className?: string;
 };
 
-const Button = ({ onClick, isDisabled, buttonText }: TProps) => {
+const Button = ({ onClick, isDisabled, buttonText, className }: TProps) => {
+  const setClass = () => {
+    return `${styled.button} ${className || ''}`;
+  };
   return (
-    <button className={styled.button} onClick={onClick} disabled={isDisabled}>
+    <button className={setClass()} onClick={onClick} disabled={isDisabled}>
       {buttonText}
     </button>
   );

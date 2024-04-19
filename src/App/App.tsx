@@ -87,7 +87,12 @@ function App() {
             onChange={handleRadioChange}
           />
         </RadioGroup>
-        <Button buttonText="Clear completed" isDisabled={!completedTodos.length} onClick={handleClearCompleted} />
+        <Button
+          className={styled.controls__btn}
+          buttonText="Clear completed"
+          isDisabled={!completedTodos.length}
+          onClick={handleClearCompleted}
+        />
       </div>
     </>
   );
