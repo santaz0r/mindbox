@@ -1,2 +1,2 @@
 - Выполнено в соответствии с ТЗ, если нужно сделать с Redux или с LocalStorage, то ожидаю обратную связь..
-- [Deploy](https://mindbox-trainee.netlify.app/)
+- [Deploy](https://mindbox-task.netlify.app/)
