@@ -1,0 +1,43 @@
+.todo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &__text {
+    color: var(--white-color);
+    font-size: 24px;
+  }
+  input {
+    appearance: none;
+    background-color: var(--white-color);
+    border-radius: 50%;
+    margin-right: 10px;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    &:checked {
+      &::after {
+        content: '\2713';
+        color: var(--green-color);
+        font-size: 24px;
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0);
+      }
+    }
+  }
+  &:has(input:checked) {
+    .todo__text {
+      text-decoration: line-through;
+
+      opacity: 0.5;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+.todos {
+  width: 100%;
+  margin: 0 auto;
+  height: 300px;
+  padding: 10px;
+  margin-bottom: 25px;
+  border-radius: 10px;
+  box-shadow: 1px 20px 26px 20px var(--box-shadow-color);
+
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    border-radius: 6px;
+    background-color: var(--scroll-bg-color);
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--scroll-thumb-color);
+    border-radius: 6px;
+  }
+}

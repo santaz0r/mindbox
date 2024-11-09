@@ -1,0 +1,65 @@
+.title {
+  margin-bottom: 30px;
+}
+
+.group {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  margin: 0 auto;
+  margin-bottom: 20px;
+
+  &::after,
+  &::before {
+    content: '';
+    position: absolute;
+    top: 40%;
+    left: 11px;
+    width: 2px;
+    height: 8px;
+    background-color: var(--gray-color);
+    transform-origin: bottom;
+  }
+  &::after {
+    transform: skewY(-25deg);
+    rotate: -45deg;
+  }
+  &::before {
+    transform: skewY(25deg);
+    rotate: 45deg;
+  }
+  input {
+    width: 100%;
+    border: none;
+    border-radius: 5px 0 0 5px;
+  }
+  button {
+    height: 100%;
+    width: max-content;
+    white-space: nowrap;
+    background-color: var(--white-color);
+    border: none;
+    margin-left: -1px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    &:disabled {
+      cursor: not-allowed;
+    }
+  }
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__btn {
+    background-color: transparent;
+    border: none;
+    color: inherit;
+    &:disabled {
+      opacity: 0.5;
+    }
+  }
+}

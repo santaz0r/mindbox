@@ -1,0 +1,12 @@
+.radio {
+  $root: &;
+  padding: 5px 10px;
+  border: 1px solid transparent;
+  text-transform: capitalize;
+  input {
+    appearance: none;
+  }
+  &:has(input:checked) {
+    border: 1px solid var(--orange-color);
+  }
+}
